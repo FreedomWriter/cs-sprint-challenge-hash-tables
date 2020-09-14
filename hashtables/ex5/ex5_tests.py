@@ -17,6 +17,7 @@ class TestEx2(unittest.TestCase):
             "baz"
         ]
         result = finder(files, queries)
+        print(f"result: {result}")
         self.assertTrue(result == ['/bin/foo', '/usr/bin/baz'])
 
         queries = [
@@ -48,6 +49,7 @@ class TestEx2(unittest.TestCase):
 
         result = finder(files, queries)
         result.sort()
+        # print(f"result: {result}")
 
         self.assertTrue(result == ['/dir256/dirb256/file256',
             '/dir256/file256', '/dir3490/dirb3490/file3490',
