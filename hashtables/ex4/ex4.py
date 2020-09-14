@@ -18,18 +18,22 @@ def has_negatives(a):
             result_with_dupes.append(abs(key))
 
     for num in result_with_dupes:
-        if not num in hash_result:
-            hash_result[num] = 0
-        hash_result[num] += 1
+        if num != 0:
+            if not num in hash_result:
+                hash_result[num] = 0
+            hash_result[num] += 1
     
     result = list(hash_result.keys())
-    
-    # print(hash_result)
-
-    # print(hash_table)
 
     return result
 
+a = list(range(5000000))
+a += [-1,-2,-3]
 
-if __name__ == "__main__":
+result = has_negatives(a)
+result.sort()
+
+print(result)
+
+# if __name__ == "__main__":
     # print(has_negatives([-1, -2, 1, 2, 3, 4, -4]))
